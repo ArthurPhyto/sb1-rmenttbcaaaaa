@@ -1,0 +1,16 @@
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build"
+
+[deploy]
+startCommand = "npm start"
+healthcheckPath = "/health"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+
+[[ports]]
+port = "3001"
+protocol = "tcp"
+
+[nixpacks]
+node-version = "18"
